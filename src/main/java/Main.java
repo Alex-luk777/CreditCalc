@@ -9,9 +9,10 @@ public class Main {
         byte month= scanner.nextByte();
         System.out.print("Enter Total price: ");
         int price=scanner.nextInt();
-        System.out.print("Enter persentage per month: ");
-
-        float percent=scanner.nextFloat();
+        /*System.out.print("Enter percentage per month: ");
+        float percent=scanner.nextFloat();*/
+        System.out.print("Enter annual percent rate: ");
+        float percent=scanner.nextFloat()/12;
         float result =  price*month*percent/100;
         float result2= result/price;
         System.out.println("You will pay: "+ (result+price));
