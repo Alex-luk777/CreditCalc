@@ -13,21 +13,30 @@ public class Validator {
 
     public static double percentIsValid(int monthInYear){
         Scanner scanner = new Scanner(System.in);
-        double percents=2;
+        double percents=2.0;
         do {
-            System.out.print("Enter annual percent rate(1.0-80.0): ");
+            System.out.print("Enter annual percent rate(1,0-80,0): ");
             percents=scanner.nextDouble();
         } while (percents<1.0 || percents>80.0);
-       return percents/monthInYear;
+              return percents/monthInYear;
 
     }
     public static int priceIsValid(){
         Scanner scanner = new Scanner(System.in);
         int price=100_000;
-        do {
+        while (true){
             System.out.print("Enter Total price(100k-10milion): ");
             price=scanner.nextInt();
-        }while (price<100_000 || price>10_000_000);
+            if (price>=100_000 && price<=10_000_000){
+                break;
+            }
+            System.out.println("Error: price isn`t valid!!!");
+        }
+
+        /*do {
+            System.out.print("Enter Total price(100k-10milion): ");
+            price=scanner.nextInt();
+        }while (price<100_000 || price>10_000_000);*/
         return price;
 
     }
